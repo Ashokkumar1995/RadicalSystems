@@ -1,0 +1,44 @@
+.tableContainer {
+  display: flex;
+  margin: 20px;
+
+  .mat-table {
+    .mat-header-cell {
+      display: flex;
+      flex-direction: column;
+      margin: 0 10px;
+      min-width: 100px;
+    }
+    .mat-form-field {
+      display: flex;
+      max-width: 100%;
+      border: 1px solid grey;
+      padding: 0 5px;
+
+      ::ng-deep .mat-form-field-infix,
+      ::ng-deep .mat-form-field-wrapper {
+        display: flex;
+        max-width: 100%;
+      }
+      ::ng-deep .mat-form-field-infix {
+        width: unset;
+      }
+    }
+    .mat-column-email,
+    .mat-column-firstcontact,
+    .mat-column-fullname,
+    .mat-column-invFiveLineAddress,
+    .mat-column-invFourLineAddress,
+    .mat-column-invSevenLineAddress,
+    .mat-column-invSixLineAddress,
+    .mat-column-invThreeLineAddress,
+    .mat-column-invTwoLineAddress,
+    .mat-column-phone,
+    .mat-column-theApsName,
+    .mat-column-theCustId,
+    .mat-column-theMainAddress,
+    .mat-column-theSiteId {
+      min-width: 200px;
+    }
+  }
+}
