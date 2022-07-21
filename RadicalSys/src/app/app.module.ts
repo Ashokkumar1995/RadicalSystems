@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { MatSortModule } from '@angular/material/sort';
     ReactiveFormsModule,
     FormsModule,
     MatSortModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

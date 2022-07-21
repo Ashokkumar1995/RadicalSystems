@@ -1,34 +1,42 @@
 <div class="tableContainer">
 
-
   <mat-table class="customerTable" [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
     <ng-container matColumnDef="$$hashKey">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by hashkey">
         <span>Hashkey</span>
-
-        <mat-form-field>
-          <!-- <input matInput formControlName="hashKeyControl" (keyup)="applyFilter($any($event.target).value)"
-            placeholder="Filter">
-             -->
-          <input matInput placeholder="Enter Hashkey" [(ngModel)]="searchValue">
-          <button mat-button (click)="applyFilter()">search</button>
-        </mat-form-field>
-
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter Hashkey" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('$$hashKey')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
+
       <mat-cell *matCellDef="let element"> {{element.$$hashKey}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="CustColour">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by CustColour">
-        Cust Color.
+        <span>Cust Color</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter Cust Color" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('CustColour')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.CustColour}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="bacsAsk">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by bacsAsk">
-        Bacs Ask.
+        <span>Bacs Ask</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter Bacs Ask" (keyup)="applyFilter($event)" (focus)="setupFilter('bacsAsk')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.bacsAsk}} </mat-cell>
     </ng-container>
@@ -36,14 +44,26 @@
 
     <ng-container matColumnDef="checkBacs">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by checkBacs">
-        checkBacs.
+        <span>checkBacs</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter checkBacs" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('checkBacs')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.checkBacs}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="cusPayID">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by cusPayID">
-        cusPayID.
+        <span>cusPayID</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter cusPayID" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('cusPayID')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.cusPayID}} </mat-cell>
     </ng-container>
@@ -71,63 +91,124 @@
 
     <ng-container matColumnDef="custcolourNum">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by custcolourNum">
-        custcolourNum.
+
+        <span>custcolourNum</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter custcolourNum" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('custcolourNum')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.custcolourNum}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="customernumber">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by customernumber">
-        customernumber.
+
+        <span>customernum</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter customernumber" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('customernumber')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.customernumber}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="email">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by email">
-        email.
+        <span>email</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter email" (keyup)="applyFilter($event)" (focus)="setupFilter('email')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="firstcontact">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by firstcontact">
-        firstcontact.
+
+        <span>firstcontact</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter firstcontact" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('firstcontact')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.firstcontact}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="fullname">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by fullname">
-        fullname.
+
+        <span>fullname</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter fullname" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('fullname')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.fullname}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="icountry">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by icountry">
-        icountry.
+
+        <span>icountry</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter icountry" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('icountry')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.icountry}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="inccustk">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by inccustk">
-        inccustk.
+
+        <span>inccustk</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter inccustk" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('inccustk')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.inccustk}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="inccustt">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by inccustt">
-        inccustt.
+
+        <span>inccustt</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter inccustt" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('inccustt')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.inccustt}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="inccustu">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by inccustu">
-        inccustu.
+
+        <span>inccustu</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter inccustu" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('inccustu')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.inccustu}} </mat-cell>
     </ng-container>
@@ -135,7 +216,14 @@
     <ng-container matColumnDef="invFiveLineAddress">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header
         sortActionDescription="Sort by invFiveLineAddress">
-        invFiveLineAddress.
+
+        <span>invFiveLineAddress</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter invFiveLineAddress" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('invFiveLineAddress')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.invFiveLineAddress}} </mat-cell>
     </ng-container>
@@ -143,7 +231,14 @@
     <ng-container matColumnDef="invFourLineAddress">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header
         sortActionDescription="Sort by invFourLineAddress">
-        invFourLineAddress.
+
+        <span>invFourLineAddress</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter invFourLineAddress" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('invFourLineAddress')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.invFourLineAddress}} </mat-cell>
     </ng-container>
@@ -151,7 +246,14 @@
     <ng-container matColumnDef="invSevenLineAddress">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header
         sortActionDescription="Sort by invSevenLineAddress">
-        invSevenLineAddress.
+
+        <span>invSevenLineAddress</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter invSevenLineAddress" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('invSevenLineAddress')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.invSevenLineAddress}} </mat-cell>
     </ng-container>
@@ -159,7 +261,14 @@
     <ng-container matColumnDef="invSixLineAddress">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header
         sortActionDescription="Sort by invSixLineAddress">
-        invSixLineAddress.
+
+        <span>invSixLineAddress</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter invSixLineAddress" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('invSixLineAddress')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.invSixLineAddress}} </mat-cell>
     </ng-container>
@@ -167,7 +276,15 @@
     <ng-container matColumnDef="invThreeLineAddress">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header
         sortActionDescription="Sort by invThreeLineAddress">
-        invThreeLineAddress.
+
+
+        <span>invThreeLineAddress</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter invThreeLineAddress" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('invThreeLineAddress')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.invThreeLineAddress}} </mat-cell>
     </ng-container>
@@ -175,35 +292,68 @@
     <ng-container matColumnDef="invTwoLineAddress">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header
         sortActionDescription="Sort by invTwoLineAddress">
-        invTwoLineAddress.
+
+        <span>invTwoLineAddress</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter invTwoLineAddress" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('invTwoLineAddress')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.invTwoLineAddress}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="isactive">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by isactive">
-        isactive.
+
+        <span>isactive</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter isactive" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('isactive')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.isactive}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="paymentType">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by paymentType">
-        paymentType.
+
+        <span>paymentType</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter paymentType" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('paymentType')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.paymentType}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="phone">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by phone">
-        phone.
+
+        <span>phone</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter phone" (keyup)="applyFilter($event)" (focus)="setupFilter('phone')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="runBacs">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by runBacs">
-        runBacs.
+
+        <span>runBacs</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter runBacs" (keyup)="applyFilter($event)" (focus)="setupFilter('runBacs')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.runBacs}} </mat-cell>
     </ng-container>
@@ -211,35 +361,70 @@
 
     <ng-container matColumnDef="sitename">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by sitename">
-        sitename.
+
+        <span>sitename</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter sitename" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('sitename')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.sitename}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="startupDate">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by startupDate">
-        startupDate.
+
+        <span>startupDate</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter startupDate" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('startupDate')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.startupDate}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="taxLabel">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by taxLabel">
-        taxLabel.
+
+        <span>taxLabel</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter taxLabel" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('taxLabel')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.taxLabel}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="theApsName">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by theApsName">
-        theApsName.
+
+        <span>theApsName</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter theApsName" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('theApsName')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.theApsName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="theCustId">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by theCustId">
-        theCustId.
+
+        <span>theCustId</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter theCustId" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('theCustId')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.theCustId}} </mat-cell>
     </ng-container>
@@ -247,57 +432,59 @@
 
     <ng-container matColumnDef="theMainAddress">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by theMainAddress">
-        theMainAddress.
+
+        <span>theMainAddress</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter theMainAddress" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('theMainAddress')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.theMainAddress}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="theSiteId">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by theSiteId">
-        theSiteId.
+
+        <span>theSiteId</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter theSiteId" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('theSiteId')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.theSiteId}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="theStatus">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by theStatus">
-        theStatus.
+
+        <span>theStatus</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter theStatus" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('theStatus')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.theStatus}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="unitlist">
       <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by unitlist">
-        unitlist.
+
+        <span>unitlist</span>
+        <div (click)="$event.stopPropagation();">
+          <mat-form-field>
+            <input matInput placeholder="Enter unitlist" (keyup)="applyFilter($event)"
+              (focus)="setupFilter('unitlist')">
+          </mat-form-field>
+        </div>
       </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.unitlist}} </mat-cell>
     </ng-container>
-
-
-    <!-- 
- 
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
-        Name
-      </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-   
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
-        Weight
-      </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-
-    
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
-        Symbol
-      </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container> -->
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row)"></mat-row>
@@ -305,3 +492,32 @@
 
 
 </div>
+<mat-card>
+  <div class="detailsContainer">
+    <ul *ngIf="(selectedCustomer | json) != ({} | json)">
+      <li>
+        <label>Name:</label>
+        <span>{{selectedCustomer.fullname}}</span>
+      </li>
+      <li>
+        <label>Main Address:</label>
+        <span>{{selectedCustomer.theMainAddress}}</span>
+      </li>
+
+      <li>
+        <label>Site:</label>
+        <span>{{selectedCustomer.theSiteId}}</span>
+      </li>
+
+      <li>
+        <label>Phone number:</label>
+        <span>{{selectedCustomer.phone}}</span>
+      </li>
+
+      <li>
+        <label>Units:</label>
+        <span>{{selectedCustomer.unitlist}}</span>
+      </li>
+    </ul>
+  </div>
+</mat-card>

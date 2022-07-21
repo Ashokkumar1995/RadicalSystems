@@ -1,13 +1,35 @@
+.mat-card {
+  margin: 20px;
+  width: 700px;
+  .detailsContainer {
+    li {
+      label {
+        font-weight: bold;
+      }
+      span {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
 .tableContainer {
   display: flex;
   margin: 20px;
 
   .mat-table {
+    .mat-row:hover {
+      cursor: pointer;
+    }
     .mat-header-cell {
       display: flex;
       flex-direction: column;
       margin: 0 10px;
       min-width: 100px;
+
+      ::ng-deep .mat-sort-header-content {
+        flex-direction: column;
+      }
     }
     .mat-form-field {
       display: flex;
